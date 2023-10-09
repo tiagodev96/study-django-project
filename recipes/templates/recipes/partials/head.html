@@ -54,8 +54,8 @@
       --font-primary: sans-serif;
       --font-headings: 'Roboto Slab', serif;
 
-      --spacing-gutter-medium: 1.875rem;
-      --spacing-gutter-large: 2.5rem;
+      --spacing-gutter-medium: 30px;
+      --spacing-gutter-large: 40px;
     }
 
     * {
@@ -65,8 +65,10 @@
     }
 
     body {
+      font-size: 1rem;
       font-family: var(--font-primary);
-      background-color: var(--color-gray-0);
+      background: var(--color-gray-1);
+      color: var(--color-dark-text);
     }
 
     h1,
@@ -85,22 +87,23 @@
     }
 
     .main-header-container {
-      background-color: var(--color-primary-dark);
+      background: var(--color-primary-dark);
     }
 
     .main-logo {
-      display: flex;
+      font-size: 2.5rem;
       color: var(--color-white);
       text-decoration: none;
+      display: flex;
       flex-flow: row nowrap;
       align-items: center;
+      justify-content: center;
       width: fit-content;
       margin: 0 auto;
-      gap: 1.25rem;
     }
 
-    .main-logo h1 {
-      font-size: 2.5rem;
+    .main-logo-icon {
+      margin-right: 20px;
     }
 
     .search-form {
@@ -109,16 +112,7 @@
       margin: 0 auto;
       border-radius: 4px;
       position: relative;
-      transition: all 0.2s ease-in-out;
-    }
-
-    .search-form:focus-within {
-      border-color: var(--color-primary);
-      background-color: var(--color-white);
-    }
-
-    .search-form:focus-within .search-button {
-      color: var(--color-primary);
+      transition: all 300ms ease-in-out;
     }
 
     .search-input,
@@ -127,7 +121,7 @@
       background: none;
       outline: none;
       padding: 10px;
-      transition: all 0.2s ease-in-out;
+      transition: all 300ms ease-in-out;
     }
 
     .search-input {
@@ -143,7 +137,131 @@
 
     .search-button:focus {
       outline: 1px solid var(--color-primary);
-      background-color: rgba(0, 0, 0, 0.06);
+      background: rgba(0, 0, 0, .05)
+    }
+
+    .search-form:focus-within {
+      border-color: var(--color-primary);
+      background: var(--color-white);
+    }
+
+    .search-form:focus-within .search-button {
+      color: var(--color-primary);
+    }
+
+    .main-content {
+      padding-top: 0;
+    }
+
+    .main-content-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: var(--spacing-gutter-large);
+    }
+
+    .recipe {
+      background: var(--color-white);
+      box-shadow: -5px 5px 10px rgba(0, 0, 0, .2);
+      transform: scale(1);
+      transition: all 300ms ease-in-out;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .recipe img {
+      max-width: 100%;
+    }
+
+    .recipe-list-item {
+      max-width: 640px;
+    }
+
+    .recipe-list-item:hover {
+      transform: scale(1.02);
+      box-shadow: -8px 8px 18px rgba(0, 0, 0, .25);
+    }
+
+    .recipe-title-container {
+      padding: var(--spacing-gutter-medium);
+      padding-bottom: 20px;
+    }
+
+    .recipe-author {
+      padding: 0 var(--spacing-gutter-medium);
+    }
+
+    .recipe-content {
+      padding: var(--spacing-gutter-medium);
+      padding-top: 20px;
+    }
+
+    .recipe-author-item {
+      color: var(--color-gray-4);
+      margin-right: 10px;
+      font-style: italic;
+      font-size: 0.875rem;
+    }
+
+    .recipe-author a {
+      color: var(--color-primary);
+      transition: all 300ms ease-in-out;
+      text-decoration: none;
+    }
+
+    .recipe-author a:hover {
+      color: var(--color-primary-dark);
+    }
+
+    .recipe-meta-container {
+      display: flex;
+      flex-flow: row wrap;
+      padding: var(--spacing-gutter-medium);
+      background: var(--color-gray-1);
+    }
+
+    .recipe-meta {
+      display: flex;
+      flex-flow: column nowrap;
+      flex-shrink: 1;
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .recipe-meta-title {
+      font-size: 1rem;
+    }
+
+    .recipe-footer a {
+      background: var(--color-primary-dark);
+      display: block;
+      color: var(--color-white);
+      text-decoration: none;
+      text-align: center;
+      padding: 15px var(--spacing-gutter-medium);
+      transition: all 300ms ease-in-out;
+    }
+
+    .recipe-footer a:hover {
+      filter: brightness(2);
+    }
+
+    .main-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--color-primary-dark);
+      color: var(--color-white);
+      padding: var(--spacing-gutter-large);
+    }
+
+    .main-footer a {
+      color: var(--color-white);
+      text-decoration: none;
+      transition: all 300ms ease-in-out;
+    }
+
+    .main-footer a:hover {
+      filter: brightness(.8);
     }
   </style>
 </head>
