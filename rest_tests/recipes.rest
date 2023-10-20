@@ -1,0 +1,12 @@
+# Recipe Home
+GET http://127.0.0.1:8000/recipes
+Content-Type: application/json
+
+{}
+###
+
+# Recipe Specific
+GET http://127.0.0.1:8000/recipes/3/
+Content-Type: application/json
+
+{}
